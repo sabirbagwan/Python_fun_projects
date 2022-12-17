@@ -1,0 +1,14 @@
+from pytube import YouTube
+
+def download(link):
+    youtubeObject = YouTube(link)
+    youtubeObject = youtubeObject.streams.get_highest_resolution()
+    try:
+        youtubeObject.download()
+    except:
+        print("Some XYZ issue")
+
+    print("Yup! Done Dona Done Done")
+
+link = input(" Put the link here: ")
+download(link)
